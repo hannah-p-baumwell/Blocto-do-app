@@ -29,18 +29,21 @@ function onReady () {
     newToDoText.value = '';
 
     //create deletebutton
-    let deleteButton = document.createElement('submit');
+    let deleteButton = document.createElement('button');
 
-    // set it to be a button
-    deleteButton.type = "submit";
+       deleteButton.textContent = "Delete";
 
-    // attach the delete button
-    newLi.appendChild(deleteButton);
+       //Give behavior
+       //When you click on it -> It should delete the whole Item (List item)
 
+       deleteButton.addEventListener('click', event => {
+         toDoList.removeChild(newLi);
+       })
 
+       newLi.appendChild(deleteButton);
 
-  });
-}
+     });
+    }
 
 window.onload = function (){
   onReady();
